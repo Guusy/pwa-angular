@@ -20,5 +20,20 @@
         "/assets/**"
       ]
     }
-  }]
+  }],
+  "dataGroups":[
+    {
+      "name":"ReditAPI",
+      "urls":[
+        "https://reddit.com/r/pics.json",
+        "https://reddit.com/r/**"
+      ],
+      "cacheConfig":{
+        "strategy":"freshness",
+        "maxAge":"1d",
+        "maxSize": 100,
+        "timeout": "10s"
+      }
+    }
+  ]
 }
