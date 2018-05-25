@@ -1,11 +1,17 @@
 {
-  "name": "pwa",
-  "short_name": "pwa",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
-  "display": "standalone",
+  "dir": "ltr",
+  "lang": "es",
+  "name": "Angular PWA",
   "scope": "/",
-  "start_url": "/",
+  "display": "fullscreen",
+  "start_url": "http://127.0.0.1:8080",
+  "short_name": "Angular PWA Platzi",
+  "theme_color": "transparent",
+  "description": "Un app para tomar notas",
+  "orientation": "any",
+  "background_color": "transparent",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
@@ -19,22 +25,22 @@
     },
     {
       "src": "assets/icons/icon-128x128.png",
-      "sizes": "128x128",
+      "sizes": "108x128",
       "type": "image/png"
     },
     {
       "src": "assets/icons/icon-144x144.png",
-      "sizes": "144x144",
+      "sizes": "121x144",
       "type": "image/png"
     },
     {
       "src": "assets/icons/icon-152x152.png",
-      "sizes": "152x152",
+      "sizes": "128x152",
       "type": "image/png"
     },
     {
       "src": "assets/icons/icon-192x192.png",
-      "sizes": "192x192",
+      "sizes": "162x192",
       "type": "image/png"
     },
     {
