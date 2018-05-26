@@ -6,6 +6,21 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {AngularFireModule} from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+
+const fireBaseConfig:any = {
+  apiKey: "AIzaSyBMc_mBexopca4Qlhzbyij-nzCKFRZNyjU",
+  authDomain: "pwa-angular-5c8d1.firebaseapp.com",
+  databaseURL: "https://pwa-angular-5c8d1.firebaseio.com",
+  projectId: "pwa-angular-5c8d1",
+  storageBucket: "",
+  messagingSenderId: "136698721303"
+};
+
 
 @NgModule({
   declarations: [
@@ -19,7 +34,12 @@ import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(fireBaseConfig),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
