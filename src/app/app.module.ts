@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatListModule, MatOptionModule, MatSelectModule,
+  MatToolbarModule
+} from '@angular/material';
 import {AngularFireModule} from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
@@ -39,7 +42,11 @@ const fireBaseConfig:any = {
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

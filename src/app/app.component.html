@@ -5,40 +5,48 @@
   <h1>
     Welcome to {{ title }} v5 holaaa!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img width="300" alt="" src="../assets/icons/icon-384x384.png">
 </div>
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Personal data
+        Nota
       </mat-panel-title>
       <mat-panel-description>
-        Type your name and age
+        Crear o editar una nueva nota
       </mat-panel-description>
     </mat-expansion-panel-header>
 
     <mat-form-field>
-      <input matInput placeholder="First name">
+      <input matInput placeholder="Titulo de la nota">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Age">
+      <mat-select placeholder="Categoria">
+        <mat-option *ngFor="let cat of categorias" [value]="cat">
+          {{ cat }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
-
+    <mat-form-field>
+      <textarea matInput placeholder="Cuerpo de la nota"></textarea>
+    </mat-form-field>
     <button mat-raised-button color="accent">Click me!</button>
   </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
+  <mat-list>
+    <mat-list-item >
+      <h3 matLine> Hola mundo </h3>
+      <p matLine> mundo ! </p>
+      <p matLine class="demo-2"> categoria  </p>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item >
+      <h3 matLine> Hola mundo </h3>
+      <p matLine> mundo ! </p>
+      <p matLine class="demo-2"> categoria  </p>
+    </mat-list-item>
+  </mat-list>
 </mat-accordion>
 
