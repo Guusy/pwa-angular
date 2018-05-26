@@ -8,6 +8,7 @@ import {SwUpdate} from '@angular/service-worker';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  panelOpenState: boolean = false;
 
   constructor(private swUpdate: SwUpdate) {
 
