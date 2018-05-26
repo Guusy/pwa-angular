@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SwUpdate} from '@angular/service-worker';
+import {NoteService} from '../services/note.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +9,11 @@ import {SwUpdate} from '@angular/service-worker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Homer App';
   panelOpenState: boolean = false;
   categorias: any = ['Trabajo', 'Personal' ] ;
-
-  constructor(private swUpdate: SwUpdate) {
+  nota: any = {};
+  constructor(private swUpdate: SwUpdate, private noteService: NoteService,public snackBar: MatSnackBar) {
 
   }
   ngOnInit(): void {
@@ -20,5 +22,17 @@ export class AppComponent implements OnInit {
         window.location.reload();
       });
     }
+  }
+  guardarNota(){
+    this.nota.id = Date.now();
+    this.noteService.createNote(this.nota).
+    then(()=>{
+      this.nota ={};
+
+        this.snackBar.open("Nota Creada !", null, {
+          duration: 2000,
+        });
+    })
+      .catch(error=>console.log(error))
   }
 }

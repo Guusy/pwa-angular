@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatListModule, MatOptionModule, MatSelectModule,
+  MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 import {AngularFireModule} from 'angularfire2';
@@ -14,6 +15,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {FormsModule} from '@angular/forms';
+import {NoteService} from '../services/note.service';
 
 const fireBaseConfig:any = {
   apiKey: "AIzaSyBMc_mBexopca4Qlhzbyij-nzCKFRZNyjU",
@@ -45,10 +48,14 @@ const fireBaseConfig:any = {
     AngularFireDatabaseModule,
     MatOptionModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    MatSnackBarModule
 
   ],
-  providers: [],
+  providers: [
+    NoteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

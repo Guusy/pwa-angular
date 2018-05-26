@@ -3,7 +3,7 @@
 
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }} v5 holaaa!
+    Welcome to {{ title }} v5!
   </h1>
   <img width="300" alt="" src="../assets/icons/icon-384x384.png">
 </div>
@@ -19,20 +19,20 @@
     </mat-expansion-panel-header>
 
     <mat-form-field>
-      <input matInput placeholder="Titulo de la nota">
+      <input matInput placeholder="Titulo de la nota" [(ngModel)]="nota.titulo">
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Categoria">
+      <mat-select placeholder="Categoria" [(ngModel)]="nota.categoria">
         <mat-option *ngFor="let cat of categorias" [value]="cat">
           {{ cat }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <textarea matInput placeholder="Cuerpo de la nota"></textarea>
+      <textarea matInput placeholder="Cuerpo de la nota" [(ngModel)]="nota.cuerpo"></textarea>
     </mat-form-field>
-    <button mat-raised-button color="accent">Click me!</button>
+    <button mat-raised-button color="accent" (click)="guardarNota()" >Guardar nota</button>
   </mat-expansion-panel>
   <mat-list>
     <mat-list-item >
