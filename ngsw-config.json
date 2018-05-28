@@ -23,16 +23,15 @@
   }],
   "dataGroups":[
     {
-      "name":"ReditAPI",
+      "name":"FireBaseAPI",
       "urls":[
-        "https://reddit.com/r/pics.json",
-        "https://reddit.com/r/**"
+        "https://pwa-angular-5c8d1.firebaseio.com/**"
       ],
       "cacheConfig":{
         "strategy":"freshness",
-        "maxAge":"1d",
+        "maxAge":"2h",
         "maxSize": 100,
-        "timeout": "10s"
+        "timeout": "5s"
       }
     }
   ]
