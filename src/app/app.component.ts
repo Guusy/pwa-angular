@@ -4,6 +4,7 @@ import {NoteService} from '../services/note.service';
 import { MatSnackBar} from '@angular/material';
 import {MatDialog} from '@angular/material';
 import {ConfirmDialog} from '../dialog/dialog.component';
+import {AuthService} from '../services/auth.service';
 
 
 
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit {
   constructor(private swUpdate: SwUpdate,
               private noteService: NoteService,
               public snackBar: MatSnackBar,
-  public dialog: MatDialog) {
+              public authService: AuthService,
+              public dialog: MatDialog) {
     this.noteService.getNotes().valueChanges()
       .subscribe((fbNotas) => {
         this.notas = fbNotas;
@@ -65,6 +67,9 @@ export class AppComponent implements OnInit {
 
     });
 
+  }
+  login(){
+  this.authService.loginFacebook();
   }
   mostarSnackBar(message: string) {
     this.snackBar.open(message, null, {

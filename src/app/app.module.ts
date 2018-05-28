@@ -18,6 +18,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {FormsModule} from '@angular/forms';
 import {NoteService} from '../services/note.service';
 import {ConfirmDialog} from '../dialog/dialog.component';
+import {AuthService} from '../services/auth.service';
 
 const fireBaseConfig:any = {
   apiKey: "AIzaSyBMc_mBexopca4Qlhzbyij-nzCKFRZNyjU",
@@ -56,7 +57,7 @@ const fireBaseConfig:any = {
 
   ],
   providers: [
-    NoteService
+    NoteService, AuthService
   ],
   entryComponents: [ConfirmDialog],
   bootstrap: [AppComponent]
