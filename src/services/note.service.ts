@@ -21,6 +21,6 @@ export class NoteService {
     return this.afDB.database.ref('/notes/' + note.id).set(note);
   }
   public deleteNote(note){
-    this.afDB.database.ref('/notes/' + note.id).remove();
+    return this.afDB.database.ref('/notes/' + note.id).remove();
   }
 }

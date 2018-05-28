@@ -34,19 +34,17 @@
     </mat-form-field>
     <button mat-raised-button color="accent" (click)="guardarNota()" >Guardar nota</button>
   </mat-expansion-panel>
+
   <mat-list>
-    <mat-list-item >
-      <h3 matLine> Hola mundo </h3>
-      <p matLine> mundo ! </p>
-      <p matLine class="demo-2"> categoria  </p>
+    <mat-list-item *ngFor="let nota of notas" (click)="seleccionarNota(nota)" >
+      <h3 matLine> {{nota.titulo }} </h3>
+      <p matLine> {{nota.cuerpo}} </p>
+      <small matLine > {{nota.categoria}} - {{nota.id  | date  }}  </small>
+
+
+      <button mat-icon-button color="accent" (click)="eliminarNota(nota)" >X</button>
     </mat-list-item>
   </mat-list>
-  <mat-list>
-    <mat-list-item >
-      <h3 matLine> Hola mundo </h3>
-      <p matLine> mundo ! </p>
-      <p matLine class="demo-2"> categoria  </p>
-    </mat-list-item>
-  </mat-list>
+
 </mat-accordion>
 

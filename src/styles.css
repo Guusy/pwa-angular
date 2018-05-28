@@ -6,3 +6,16 @@
     width: 100%;
   }
 }
+.red {
+  color: white;
+  background-color: #ff4983;
+}
+.green{
+  background-color: #08d004;
+}
+.box-actions-confirm{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}

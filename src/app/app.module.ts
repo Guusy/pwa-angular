@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatListModule, MatOptionModule, MatSelectModule,
+  MatButtonModule, MatDialogModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatListModule, MatOptionModule, MatSelectModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {FormsModule} from '@angular/forms';
 import {NoteService} from '../services/note.service';
+import {ConfirmDialog} from '../dialog/dialog.component';
 
 const fireBaseConfig:any = {
   apiKey: "AIzaSyBMc_mBexopca4Qlhzbyij-nzCKFRZNyjU",
@@ -30,7 +31,7 @@ const fireBaseConfig:any = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, ConfirmDialog
   ],
   imports: [
     BrowserModule,
@@ -50,12 +51,14 @@ const fireBaseConfig:any = {
     MatSelectModule,
     MatListModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
 
   ],
   providers: [
     NoteService
   ],
+  entryComponents: [ConfirmDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
